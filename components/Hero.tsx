@@ -19,11 +19,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/25" />
 
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+        <div className="max-w-4xl mx-auto text-center ">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg ">
             Bona Fides Nekretnine Nova
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 drop-shadow-md">
+          <p className="text-xl md:text-2xl mb-8 text-white/80 drop-shadow-md">
             Vaš pouzdan partner u kupovini i prodaji nekretnina
           </p>
           <p className="text-lg mb-12 text-white/90 max-w-2xl mx-auto drop-shadow-md">
