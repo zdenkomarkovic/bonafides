@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
-      "Bash(dir \".claude\\commands\")"
+      "Bash(dir \".claude\\commands\")",
+      "WebFetch(domain:www.bonafidesnova.rs)",
+      "Bash(dir:*)",
+      "Bash(npm install:*)",
+      "Bash(del next.config.ts)",
+      "Bash(del /f next.config.ts)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout /t 5)",
+      "Bash(del /f apptest-categoriespage.tsx)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
