@@ -60,59 +60,91 @@ export default function KontaktPage() {
               </h2>
 
               <div className="space-y-6">
+                {/* Fiksni telefoni */}
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Telefon</h3>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2">Fiksni telefoni</h3>
+                    <div className="space-y-1.5">
+                      <Link
+                        href="tel:014293923"
+                        className="block text-muted-foreground hover:text-primary transition-colors font-medium"
+                      >
+                        014/293-923
+                      </Link>
+                      <Link
+                        href="tel:014293920"
+                        className="block text-muted-foreground hover:text-primary transition-colors font-medium"
+                      >
+                        014/293-920
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobilni telefon */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2">Mob/Viber/WhatsApp</h3>
                     <Link
                       href="tel:+381638226026"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="block text-muted-foreground hover:text-primary transition-colors font-medium"
                     >
                       +381 63 822 6026
                     </Link>
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2">Email</h3>
                     <Link
                       href="mailto:bonafidesnova@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="block text-muted-foreground hover:text-primary transition-colors font-medium break-all"
                     >
                       bonafidesnova@gmail.com
                     </Link>
                   </div>
                 </div>
 
+                {/* Adresa */}
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Adresa</h3>
-                    <p className="text-muted-foreground">Valjevo, Srbija</p>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2">Adresa kancelarije</h3>
+                    <div className="text-muted-foreground space-y-0.5">
+                      <p className="font-medium">Ul. Karađorđeva br. 123</p>
+                      <p>(u pasažu)</p>
+                      <p>14000 Valjevo, Srbija</p>
+                    </div>
                   </div>
                 </div>
 
+                {/* Facebook */}
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Facebook className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Facebook</h3>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2">Facebook</h3>
                     <Link
                       href="https://www.facebook.com/bonafidesnekretninevaljevo?locale=sr_RS"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center gap-1"
                     >
-                      Pratite nas na Facebook-u
+                      Pratite nas na Facebook-u →
                     </Link>
                   </div>
                 </div>

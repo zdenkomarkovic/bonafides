@@ -58,7 +58,7 @@ export default function CategoriesSection({
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Link href={`/nekretnine?kategorija=${category.slug.current}`}>
+              <Link href={`/nekretnine?kategorija=${category.slug?.current || ''}`}>
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="bg-card rounded-xl overflow-hidden shadow-lg border border-primary/10 hover:border-primary/30 transition-all cursor-pointer h-full"

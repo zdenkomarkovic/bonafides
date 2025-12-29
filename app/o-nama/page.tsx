@@ -15,7 +15,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white py-16">
+      <section className="bg-primary text-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6 text-center">O Nama</h1>
           <p className="text-xl text-center max-w-3xl mx-auto text-purple-100">
@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="bg-card p-8 rounded-lg shadow-md border border-border mb-8">
               <h2 className="text-3xl font-bold mb-6">
                 Bona Fides Nekretnine Nova

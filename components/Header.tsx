@@ -28,10 +28,16 @@ import { Category } from "@/types/property";
 
 const mobTitleStyles = "text-lg py-2";
 
-const MobileMenu = ({ categories }: { categories: Category[] }) => (
+const MobileMenu = ({ categories, scrolled }: { categories: Category[], scrolled: boolean }) => (
   <Sheet>
     <SheetTrigger className="lg:hidden">
-      <MenuIcon className="text-primary cursor-pointer" />
+      <motion.div
+        animate={{
+          color: scrolled ? "hsl(var(--primary))" : "#ffffff",
+        }}
+      >
+        <MenuIcon className="cursor-pointer" />
+      </motion.div>
     </SheetTrigger>
     <SheetContent>
       <SheetHeader>
@@ -231,8 +237,7 @@ export default function Header() {
               borderColor: scrolled ? "hsl(var(--primary))" : "#ffffff",
             }}
             whileHover={{
-              color: "hsl(var(--foreground))",
-              backgroundColor: "hsl(var(--primary))",
+              scale: 1.05,
             }}
             className="items-center justify-center rounded-full border-2 text-sm md:text-lg py-1 px-2 md:py-2 md:px-4 transition-colors flex gap-2"
           >
@@ -240,7 +245,7 @@ export default function Header() {
             <p className="">+381 63 822 6026</p>
           </motion.button>
         </Link>
-        <MobileMenu categories={categories} />
+        <MobileMenu categories={categories} scrolled={scrolled} />
       </nav>
     </header>
   );
