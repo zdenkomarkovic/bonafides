@@ -11,6 +11,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 
 import { motion } from "framer-motion";
@@ -51,38 +52,29 @@ const MobileMenu = ({ categories, scrolled }: { categories: Category[], scrolled
                   <Fragment key={index}>
                     <Accordion type="single" collapsible>
                       <AccordionItem className="border-none" value="item-1">
-                        <motion.div
-                          whileHover={{ color: "hsl(var(--primary))" }}
+                        <AccordionTrigger
+                          className={`${mobTitleStyles} hover:no-underline`}
                         >
-                          <AccordionTrigger
-                            className={`${mobTitleStyles} hover:no-underline`}
-                          >
-                            {item.title}
-                          </AccordionTrigger>
-                        </motion.div>
+                          {item.title}
+                        </AccordionTrigger>
                         <AccordionContent>
-                          <Link
-                            className="pl-6 block font-light py-2"
-                            href="/nekretnine"
-                          >
-                            <motion.li
-                              whileHover={{ color: "hsl(var(--primary))" }}
-                            >
-                              Sve nekretnine
-                            </motion.li>
-                          </Link>
-                          {categories.map((category) => (
+                          <SheetClose asChild>
                             <Link
                               className="pl-6 block font-light py-2"
-                              key={category._id}
-                              href={`/nekretnine?kategorija=${category.slug.current}`}
+                              href="/nekretnine"
                             >
-                              <motion.li
-                                whileHover={{ color: "hsl(var(--primary))" }}
-                              >
-                                {category.title}
-                              </motion.li>
+                              <li>Sve nekretnine</li>
                             </Link>
+                          </SheetClose>
+                          {categories.map((category) => (
+                            <SheetClose asChild key={category._id}>
+                              <Link
+                                className="pl-6 block font-light py-2"
+                                href={`/nekretnine?kategorija=${category.slug.current}`}
+                              >
+                                <li>{category.title}</li>
+                              </Link>
+                            </SheetClose>
                           ))}
                         </AccordionContent>
                       </AccordionItem>
@@ -92,14 +84,13 @@ const MobileMenu = ({ categories, scrolled }: { categories: Category[], scrolled
               }
 
               return (
-                <Link key={index} href={item.link}>
-                  <motion.li
-                    whileHover={{ color: "hsl(var(--primary))" }}
-                    className={mobTitleStyles}
-                  >
-                    <SheetTrigger>{item.title}</SheetTrigger>
-                  </motion.li>
-                </Link>
+                <SheetClose asChild key={index}>
+                  <Link href={item.link}>
+                    <li className={mobTitleStyles}>
+                      {item.title}
+                    </li>
+                  </Link>
+                </SheetClose>
               );
             })}
           </ul>
@@ -127,7 +118,7 @@ const DesktopNav = ({
                 animate={{
                   color: scrolled ? "hsl(var(--primary))" : "#ffffff",
                 }}
-                whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
+                whileHover={{ scale: 1.1 }}
                 className="flex gap-1 transition-colors cursor-pointer"
               >
                 {item.title}
@@ -135,23 +126,15 @@ const DesktopNav = ({
               </motion.div>
             </HoverCardTrigger>
             <HoverCardContent className="p-0">
-              <motion.li
-                whileHover={{
-                  backgroundColor: "hsl(var(--primary))",
-                  color: "hsl(var(--primary-foreground))",
-                }}
-              >
+              <li className="hover:bg-primary/10 transition-colors">
                 <Link className="px-2 py-2 block" href="/nekretnine">
                   Sve nekretnine
                 </Link>
-              </motion.li>
+              </li>
               {categories.map((category) => (
-                <motion.li
+                <li
                   key={category._id}
-                  whileHover={{
-                    backgroundColor: "hsl(var(--primary))",
-                    color: "hsl(var(--primary-foreground))",
-                  }}
+                  className="hover:bg-primary/10 transition-colors"
                 >
                   <Link
                     className="px-2 py-2 block"
@@ -159,7 +142,7 @@ const DesktopNav = ({
                   >
                     {category.title}
                   </Link>
-                </motion.li>
+                </li>
               ))}
             </HoverCardContent>
           </HoverCard>
@@ -171,7 +154,7 @@ const DesktopNav = ({
           <motion.li
             animate={{ color: scrolled ? "hsl(var(--primary))" : "#ffffff" }}
             className="transition-colors underline-animation"
-            whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
+            whileHover={{ scale: 1.1 }}
           >
             {item.title}
           </motion.li>

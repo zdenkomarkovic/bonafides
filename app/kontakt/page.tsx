@@ -31,8 +31,9 @@ export default function KontaktPage() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-12">
-      <div className="container mx-auto px-4 md:px-10 max-w-7xl">
+    <main className="min-h-screen pb-12">
+      <div className="w-full bg-primary h-20"></div>
+      <div className="container pt-10 mx-auto px-4 md:px-10 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
