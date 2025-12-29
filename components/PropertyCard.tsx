@@ -20,7 +20,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
       <div className="relative h-64 overflow-hidden">
         <Image
           src={imageUrl}
-          alt={mainImage?.alt || property.title}
+          alt={mainImage?.alt || property.title || 'Nekretnina'}
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-300"
         />
