@@ -1,12 +1,16 @@
-import WhyChooseUs from '@/components/WhyChooseUs'
-import Services from '@/components/Services'
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaCertificate } from 'react-icons/fa'
+import WhyChooseUs from "@/components/WhyChooseUs";
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaCertificate,
+} from "react-icons/fa";
 
 export const metadata = {
-  title: 'O Nama - Bona Fides Nekretnine Nova',
+  title: "O Nama - Bona Fides Nekretnine Nova",
   description:
-    'Saznajte više o agenciji Bona Fides Nekretnine Nova. Profesionalno obučeni agenti sa dugogodišnjim iskustvom u prometu nekretnina u Valjevu.',
-}
+    "Saznajte više o agenciji Bona Fides Nekretnine Nova. Profesionalno obučeni agenti sa dugogodišnjim iskustvom u prometu nekretnina u Valjevu.",
+};
 
 export default function AboutPage() {
   return (
@@ -24,21 +28,25 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-card p-8 rounded-lg shadow-md border border-border mb-8">
-              <h2 className="text-3xl font-bold mb-6">Bona Fides Nekretnine Nova</h2>
+              <h2 className="text-3xl font-bold mb-6">
+                Bona Fides Nekretnine Nova
+              </h2>
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p className="mb-4">
-                  Agencija za nekretnine <strong>Bona Fides Nekretnine Nova</strong> je firma
-                  koja već mnogo godina postoji na ovom području. Tačnije rečeno, tim
-                  profesionalno obučenih agenata već godinama radi na posredovanju u prometu
-                  nekretnina i agencija se može pohvaliti sa velikim brojem zadovoljnih
-                  klijenata.
+                  Agencija za nekretnine{" "}
+                  <strong>Bona Fides Nekretnine Nova</strong> je firma koja već
+                  mnogo godina postoji na ovom području. Tačnije rečeno, tim
+                  profesionalno obučenih agenata već godinama radi na
+                  posredovanju u prometu nekretnina i agencija se može pohvaliti
+                  sa velikim brojem zadovoljnih klijenata.
                 </p>
                 <p className="mb-4">
-                  Licencirani agenti su poznati po profesionalnom i ljubaznom odnosu prema
-                  klijentima. Pored toga, agencija raspolaže sa sopstvenim pravnicima koji se
-                  bave pretežno imovinsko pravnim poslovima, odnosno, pored izrade
-                  predkontraktne i kontraktne dokumentacije, pravnici daju i savete pravne
-                  prirode u vezi sa nekretninama.
+                  Licencirani agenti su poznati po profesionalnom i ljubaznom
+                  odnosu prema klijentima. Pored toga, agencija raspolaže sa
+                  sopstvenim pravnicima koji se bave pretežno imovinsko pravnim
+                  poslovima, odnosno, pored izrade predkontraktne i kontraktne
+                  dokumentacije, pravnici daju i savete pravne prirode u vezi sa
+                  nekretninama.
                 </p>
                 <p className="mb-4">
                   Specijalizovani smo za kupovinu i prodaju:
@@ -52,13 +60,14 @@ export default function AboutPage() {
                   <li>Seoskih imanja</li>
                 </ul>
                 <p className="mb-4">
-                  Pored navedenog, naša agencija posreduje u prometu nekretnina i u Beogradu,
-                  i takođe, agencija posreduje u izdavanju nekretnina.
+                  Pored navedenog, naša agencija posreduje u prometu nekretnina
+                  i u Beogradu, i takođe, agencija posreduje u izdavanju
+                  nekretnina.
                 </p>
                 <p className="mb-4">
-                  Takođe, agencija vam može pružiti i pomoć pri obezbedivanju sredstava za
-                  finansiranje stambenih kredita putem raznih banaka sa kojima ima ugovor o
-                  saradnji.
+                  Takođe, agencija vam može pružiti i pomoć pri obezbedivanju
+                  sredstava za finansiranje stambenih kredita putem raznih
+                  banaka sa kojima ima ugovor o saradnji.
                 </p>
               </div>
             </div>
@@ -72,8 +81,8 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Licenca</h3>
                     <p className="text-muted-foreground">
-                      Upisani u Registar posrednika pri Ministarstvu trgovine, turizma i
-                      telekomunikacija pod brojem <strong>952</strong>
+                      Upisani u Registar posrednika pri Ministarstvu trgovine,
+                      turizma i telekomunikacija pod brojem <strong>952</strong>
                     </p>
                   </div>
                 </div>
@@ -137,9 +146,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <WhyChooseUs />
-      <Services />
     </main>
-  )
+  );
 }
