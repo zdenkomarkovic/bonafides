@@ -94,6 +94,14 @@ export default async function PropertyPage({ params }: { params: { slug: string 
           <div className="bg-card p-6 rounded-lg shadow-md border border-border mb-8">
             <h1 className="text-3xl font-bold mb-4">{property.title || 'Bez naslova'}</h1>
 
+            {property.propertyId && (
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-primary bg-primary/10 px-3 py-1.5 rounded">
+                  ID Nekretnine: {property.propertyId}
+                </span>
+              </div>
+            )}
+
             {property.location && (
               <div className="flex items-center text-muted-foreground mb-6">
                 <FaMapMarkerAlt className="mr-2" />
@@ -202,10 +210,10 @@ export default async function PropertyPage({ params }: { params: { slug: string 
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
                   <a
-                    href="mailto:snezanaa50@gmail.com"
+                    href="mailto:bonafidesnova@gmail.com"
                     className="font-semibold hover:text-primary"
                   >
-                    snezanaa50@gmail.com
+                    bonafidesnova@gmail.com
                   </a>
                 </div>
               </div>

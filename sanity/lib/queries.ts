@@ -15,6 +15,7 @@ export const featuredPropertiesQuery = groq`
     _id,
     title,
     slug,
+    propertyId,
     category->{
       _id,
       title,
@@ -50,6 +51,7 @@ export const allPropertiesQuery = groq`
     _id,
     title,
     slug,
+    propertyId,
     category->{
       _id,
       title,
@@ -85,6 +87,7 @@ export const propertyBySlugQuery = groq`
     _id,
     title,
     slug,
+    propertyId,
     category->{
       _id,
       title,
@@ -125,6 +128,7 @@ export const propertiesByCategoryQuery = groq`
     _id,
     title,
     slug,
+    propertyId,
     category->{
       _id,
       title,

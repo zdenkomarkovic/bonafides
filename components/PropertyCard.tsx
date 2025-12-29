@@ -37,6 +37,13 @@ export default function PropertyCard({ property }: PropertyCardProps) {
       </div>
 
       <div className="p-6">
+        {property.propertyId && (
+          <div className="mb-2">
+            <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">
+              ID: {property.propertyId}
+            </span>
+          </div>
+        )}
         <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-1">
           {property.title || 'Bez naslova'}
         </h3>

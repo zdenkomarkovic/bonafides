@@ -22,6 +22,7 @@ export interface Property {
   slug: {
     current: string
   }
+  propertyId?: string
   category?: Category
   price?: number
   location?: string

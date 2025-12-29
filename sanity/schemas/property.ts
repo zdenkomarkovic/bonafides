@@ -56,6 +56,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'propertyId',
+      title: 'ID Nekretnine',
+      type: 'string',
+      description: 'Unesite jedinstveni ID broj za nekretninu (npr. NK-001)',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'category',
       title: 'Kategorija',
       type: 'reference',
