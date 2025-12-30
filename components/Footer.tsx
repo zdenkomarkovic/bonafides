@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center text-center gap-2 md:gap-10 border-t-[1px] border-primary/20 mt-10 pt-5">
+        <div className="flex flex-col  md:flex-row justify-center text-center gap-2 md:gap-10 border-t-[1px] border-primary/20 mt-10 pt-5">
           <p>
             &copy; {new Date().getFullYear()} Bona Fides Nekretnine Nova. Sva
             prava zadržana.
