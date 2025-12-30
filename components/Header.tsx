@@ -29,7 +29,13 @@ import { Category } from "@/types/property";
 
 const mobTitleStyles = "text-lg py-2";
 
-const MobileMenu = ({ categories, scrolled }: { categories: Category[], scrolled: boolean }) => (
+const MobileMenu = ({
+  categories,
+  scrolled,
+}: {
+  categories: Category[];
+  scrolled: boolean;
+}) => (
   <Sheet>
     <SheetTrigger className="lg:hidden">
       <motion.div
@@ -86,9 +92,7 @@ const MobileMenu = ({ categories, scrolled }: { categories: Category[], scrolled
               return (
                 <SheetClose asChild key={index}>
                   <Link href={item.link}>
-                    <li className={mobTitleStyles}>
-                      {item.title}
-                    </li>
+                    <li className={mobTitleStyles}>{item.title}</li>
                   </Link>
                 </SheetClose>
               );
@@ -202,14 +206,14 @@ export default function Header() {
           : "bg-transparent"
       }  fixed top-0 left-0 right-0 z-[10] transition-colors`}
     >
-      <nav className="flex items-center justify-between px-8 py-4 max-w-[80rem] w-full font-bold">
+      <nav className="flex items-center justify-between px-8 py-1 max-w-[80rem] w-full font-bold">
         <Link href="/" className="">
           <Image
             src={Logo}
             alt="Bona Fides Nekretnine Nova"
-            width={50}
-            height={50}
-            className="rounded-full"
+            width={80}
+            height={80}
+            className=""
           />
         </Link>
         <DesktopNav categories={categories} scrolled={scrolled} />
