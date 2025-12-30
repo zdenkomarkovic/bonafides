@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Category } from '@/types/property'
 
 interface PropertyFilterProps {
   categories: Category[]
   onFilterChange: (filters: FilterState) => void
+  initialCategoryId?: string
 }
 
 export interface FilterState {
@@ -18,7 +19,7 @@ export interface FilterState {
   search: string
 }
 
-export default function PropertyFilter({ categories, onFilterChange }: PropertyFilterProps) {
+export default function PropertyFilter({ categories, onFilterChange, initialCategoryId }: PropertyFilterProps) {
   const [filters, setFilters] = useState<FilterState>({
     category: '',
     minPrice: 0,
@@ -28,6 +29,13 @@ export default function PropertyFilter({ categories, onFilterChange }: PropertyF
     rooms: 0,
     search: '',
   })
+
+  // Postavi inicijalnu kategoriju kada se učita
+  useEffect(() => {
+    if (initialCategoryId) {
+      setFilters(prev => ({ ...prev, category: initialCategoryId }))
+    }
+  }, [initialCategoryId])
 
   const handleChange = (field: keyof FilterState, value: string | number) => {
     const newFilters = { ...filters, [field]: value }

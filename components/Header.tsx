@@ -76,7 +76,7 @@ const MobileMenu = ({
                             <SheetClose asChild key={category._id}>
                               <Link
                                 className="pl-6 block font-light py-2"
-                                href={`/nekretnine?kategorija=${category.slug.current}`}
+                                href={`/nekretnine?kategorija=${category.slug?.current || ''}`}
                               >
                                 <li>{category.title}</li>
                               </Link>
@@ -142,7 +142,7 @@ const DesktopNav = ({
                 >
                   <Link
                     className="px-2 py-2 block"
-                    href={`/nekretnine?kategorija=${category.slug.current}`}
+                    href={`/nekretnine?kategorija=${category.slug?.current || ''}`}
                   >
                     {category.title}
                   </Link>
