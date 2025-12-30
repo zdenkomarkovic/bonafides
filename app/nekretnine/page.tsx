@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PropertyGrid from "@/components/PropertyGrid";
 import PropertyFilter, { FilterState } from "@/components/PropertyFilter";
 import { Property, Category } from "@/types/property";
 import { getAllProperties, getCategories } from "@/sanity/lib/api";
 
-export default function PropertiesPage() {
+function PropertiesPageContent() {
   const [properties, setProperties] = useState<Property[]>([]);
   const [filteredProperties, setFilteredProperties] = useState<Property[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -123,5 +123,19 @@ export default function PropertiesPage() {
 
       <PropertyGrid properties={filteredProperties} />
     </main>
+  );
+}
+
+export default function PropertiesPage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-24">
+        <div className="text-center">
+          <div className="text-lg">Učitavanje nekretnina...</div>
+        </div>
+      </div>
+    }>
+      <PropertiesPageContent />
+    </Suspense>
   );
 }
