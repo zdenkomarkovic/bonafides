@@ -12,7 +12,9 @@ interface CategoriesSectionProps {
 }
 
 // Ikone za različite kategorije (fallback ako nema slike)
-const getCategoryIcon = (title: string) => {
+const getCategoryIcon = (title?: string) => {
+  if (!title) return <Building2 className="w-32 h-32" />;
+
   const lowerTitle = title.toLowerCase();
 
   if (lowerTitle.includes("stan")) return <Building2 className="w-32 h-32" />;
