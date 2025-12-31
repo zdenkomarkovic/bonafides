@@ -10,7 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Bona Fides Nekretnine Nova - Agencija za Nekretnine Valjevo",
-  description: "Profesionalna agencija za nekretnine u Valjevu. Kupovina i prodaja stanova, kuća, poslovnih prostora i placeva. Licencirani agenti i kompletna pravna podrška.",
+  description:
+    "Profesionalna agencija za nekretnine u Valjevu. Kupovina i prodaja stanova, kuća, poslovnih prostora i placeva. Licencirani agenti i kompletna pravna podrška.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -20,9 +21,22 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  keywords: ["nekretnine", "valjevo", "agencija", "stanovi", "kuće", "poslovni prostori", "placevi", "bona fides", "nekretnine valjevo", "kupovina", "prodaja", "iznajmljivanje"],
+  keywords: [
+    "nekretnine",
+    "valjevo",
+    "agencija",
+    "stanovi",
+    "kuće",
+    "poslovni prostori",
+    "placevi",
+    "bona fides",
+    "nekretnine valjevo",
+    "kupovina",
+    "prodaja",
+    "iznajmljivanje",
+  ],
   alternates: {
-    canonical: "https://www.bonafidesnova.rs/",
+    canonical: "https://www.bonafides-nova.rs/",
   },
 };
 
