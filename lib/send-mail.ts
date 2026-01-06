@@ -53,8 +53,11 @@ export async function sendMail({
     console.log("Message Sent", request.body);
     console.log("Mail sent to", sendTo || SITE_MAIL_RECEIVER);
 
+    // Type assertion for Mailjet response
+    const responseBody = request.body as any;
+
     return {
-      messageId: request.body.Messages?.[0]?.To?.[0]?.MessageID || "sent",
+      messageId: responseBody?.Messages?.[0]?.To?.[0]?.MessageID || "sent",
       success: true,
     };
   } catch (error) {
