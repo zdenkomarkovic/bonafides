@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import Header from './Header'
 import Footer from './Footer'
 import ButtonToTop from './ButtonToTop'
+import { Toaster } from 'sonner'
 
 export default function ConditionalLayout({
   children,
@@ -23,6 +24,7 @@ export default function ConditionalLayout({
       {children}
       <ButtonToTop />
       <Footer />
+      <Toaster position="top-center" richColors />
     </>
   )
 }

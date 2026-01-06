@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Facebook, Send } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { sendMail } from "@/lib/send-mail";
+import { toast } from "sonner";
 
 export default function KontaktPage() {
   const [formData, setFormData] = useState({
@@ -13,12 +15,33 @@ export default function KontaktPage() {
     poruka: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Ovde dodati logiku za slanje forme
-    console.log("Form data:", formData);
-    alert("Hvala što ste nas kontaktirali! Odgovorićemo uskoro.");
-    setFormData({ ime: "", email: "", telefon: "", poruka: "" });
+    setIsSubmitting(true);
+
+    try {
+      const mailText = `Ime: ${formData.ime}\nTelefon: ${formData.telefon}\nEmail: ${formData.email}\nPoruka: ${formData.poruka}`;
+
+      const response = await sendMail({
+        email: formData.email,
+        subject: "Nova poruka sa kontakt forme",
+        text: mailText,
+      });
+
+      if (response?.messageId) {
+        toast.success("Hvala što ste nas kontaktirali! Odgovorićemo uskoro.");
+        setFormData({ ime: "", email: "", telefon: "", poruka: "" });
+      } else {
+        toast.error("Greška pri slanju poruke. Molimo pokušajte ponovo.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Greška pri slanju poruke. Molimo pokušajte ponovo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -251,12 +274,13 @@ export default function KontaktPage() {
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-5 h-5" />
-                  Pošalji poruku
+                  {isSubmitting ? "Šalje se..." : "Pošalji poruku"}
                 </motion.button>
               </form>
             </div>
