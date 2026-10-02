@@ -247,9 +247,7 @@ export default async function PropertyPage({ params }: { params: { slug: string 
               <strong>Adresa kancelarije:</strong>
             </p>
             <p className="text-sm">
-              Ul. Karađorđeva br. 123
-              <br />
-              (u pasažu)
+              Ul. Čika Ljubina br. 15
               <br />
               Valjevo, Srbija
             </p>

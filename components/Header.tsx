@@ -213,7 +213,7 @@ export default function Header() {
             alt="Bona Fides Nekretnine Nova"
             width={80}
             height={80}
-            className=""
+            className="rounded-full"
           />
         </Link>
         <DesktopNav categories={categories} scrolled={scrolled} />

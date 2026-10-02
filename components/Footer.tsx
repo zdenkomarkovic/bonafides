@@ -33,7 +33,7 @@ export default function Footer() {
               </Link>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />
-                <span>Valjevo, Srbija</span>
+                <span>Ul. Čika Ljubina br. 15, Valjevo, Srbija</span>
               </div>
             </div>
           </div>

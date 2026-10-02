@@ -130,7 +130,7 @@ Možete koristiti bilo koju platformu koja podržava Next.js:
 - **Email:** snezanaa50@gmail.com
 - **Telefon:** 014/293-923, 014/293-920
 - **Mob/Viber/WhatsApp:** +381 63 822 6026
-- **Adresa:** Ul. Karađorđeva br. 123 (u pasažu), Valjevo
+- **Adresa:** Ul. Čika Ljubina br. 15, Valjevo
 - **Registarski broj:** 952
 
 ## License
